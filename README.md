@@ -1,5 +1,7 @@
 ## Welcome to GitHub Pages
 
+- Hello World - 8/7/2022
+
 You can use the [editor on GitHub](https://github.com/bguerin30/Mercury/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
