@@ -1,14 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-DSTESTALL_SRC     =  c_modules/data_structures/utests/TestAll.c
-DSTEST_SRCS       =  c_modules/data_structures/utests/ringbuf_test.c
-DSTESTALL_OBJ     =  build/c_modules/data_structures/obj/tests/all/TestAll.o
-DSTESTALL_OBJS    =  build/c_modules/data_structures/obj/tests/all/ringbuf_test.o
-DSTESTSING_OBJS   =  build/c_modules/data_structures/obj/tests/single/ringbuf_test.o
-DSTESTALL_OBJDIR  = build/c_modules/data_structures/obj/tests/all
-DSTESTSING_OBJDIR = build/c_modules/data_structures/obj/tests/single
-DS_LIBOUT = lib/c_modules/data_structures/libDataStruct.a
-DS_OBJS = build/c_modules/data_structures/obj/RingBuf.o
- 
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -16,45 +6,44 @@ DS_OBJS = build/c_modules/data_structures/obj/RingBuf.o
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug  8 05:42:56 2022
+# Make data base, printed on Mon Aug  8 08:24:34 2022
 
 # Variables
 
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 3)
-ALGO_INCDIR := c_modules/algorithms/inc
+ALGO_INCDIR := /inc
 # environment
 GDK_BACKEND = x11
 # makefile (from 'Makefile', line 3)
- 
 LIBDIR := lib
 # environment
 LC_ALL = C
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 14)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 13)
 DSTESTSING_OBJDIR := build/c_modules/data_structures/obj/tests/single
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 19)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 18)
 _DS_OBJS := RingBuf.o
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 10)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 9)
 DS_BINDIR := build/c_modules/data_structures/bin
 # environment
 SNAP_INSTANCE_KEY = 
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 29)
-ALGOTEST_INCFLAGS :=  -Ic_modules/algorithms/inc  -Ic_modules/data_structures/utests
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 31)
-DS_MAKEFILE := c_modules/data_structures/Makefile
+ALGOTEST_INCFLAGS := -Ic_modules/include -I/inc  -I
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 30)
+DS_MAKEFILE := /Makefile
 # environment
 VSCODE_CWD = /home/ben/Repos/Mecury
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 24)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 23)
 DS_LIBS := lib/c_modules/data_structures/RingBuf.o
-# makefile (from 'c_modules/cmod_conf.mk', line 2)
+# makefile (from 'c_modules/Makefile', line 2)
 CMODBUILD_DIR := build/c_modules
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 10)
 ALGO_BINDIR := build/c_modules/algorithms/bin
-# makefile (from 'c_modules/cmod_conf.mk', line 20)
-INCFLAGS := 
+# makefile (from 'c_modules/Makefile', line 35)
+INCFLAGS := -Ic_modules/include
 # default
 MAKE_COMMAND := make
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 11)
@@ -67,10 +56,16 @@ _ALGO_LIBS :=
 @D = $(patsubst %/,%,$(dir $@))
 # environment
 SNAP_INSTANCE_NAME = code
+# makefile (from 'c_modules/Makefile', line 7)
+CMODINC_DIR := c_modules/include
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/103/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# makefile (from 'c_modules/Makefile', line 20)
+CMODTEST_SRC :=  c_modules/utests/TestAll.c
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# makefile (from 'c_modules/Makefile', line 9)
+CMODTEST_DIR := c_modules/utests
 # default
 .VARIABLES := 
 # environment
@@ -80,7 +75,7 @@ PWD = /home/ben/Repos/Mecury
 # environment
 XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 31)
-ALGO_MAKEFILE := c_modules/algorithms/Makefile
+ALGO_MAKEFILE := /Makefile
 # environment
 OLDPWD = /home/ben/Repos/ConfigFiles
 # automatic
@@ -89,35 +84,30 @@ OLDPWD = /home/ben/Repos/ConfigFiles
 ALGO_LIBS := 
 # automatic
 %F = $(notdir $%)
-# makefile (from 'c_modules/cmod_conf.mk', line 22)
-CMOD_MAKEFILES := c_modules/data_structures/Makefile c_modules/algorithms/Makefile
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 10)
-DSTEST_SRCS :=  c_modules/data_structures/utests/ringbuf_test.c
+# makefile (from 'c_modules/Makefile', line 38)
+CMOD_MAKEFILES :=  c_modules/makefiles/algo_Makefile.mk  c_modules/makefiles/ds_Makefile.mk
 # environment
 VSCODE_CODE_CACHE_PATH = /home/ben/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
+# makefile (from 'c_modules/Makefile', line 21)
+CMODTEST_OBJ :=  build/c_modules/TestAll.o
 # environment
 LANG = C
 # environment
 XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.E1PXP1
 # default
 .LOADED := 
- 
 # default
 .INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 15)
-DSTESTALL_OBJS :=  build/c_modules/data_structures/obj/tests/all/ringbuf_test.o
-# makefile (from 'c_modules/cmod_conf.mk', line 16)
-TESTALL_CFLAGS := -Wall -O3 -g -DTEST_ALL
 # environment
 GNOME_TERMINAL_SERVICE = :1.109
 # makefile
 MAKEFLAGS = pqrR
-# makefile (from 'c_modules/cmod_conf.mk', line 5)
+# makefile (from 'c_modules/Makefile', line 5)
 CMODCONF_DIR := c_modules/make_conf
 # makefile
 CURDIR := /home/ben/Repos/Mecury
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 6)
-DS_EXMPLDIR := c_modules/data_structures/examples
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 5)
+DS_EXMPLDIR := c_modules/examples/data_structures
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
@@ -130,7 +120,7 @@ MFLAGS = -pqrR
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # default
 .SHELLFLAGS := -c
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 13)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 12)
 DSTESTALL_OBJDIR := build/c_modules/data_structures/obj/tests/all
 # environment
 WAYLAND_DISPLAY = wayland-0
@@ -138,22 +128,20 @@ WAYLAND_DISPLAY = wayland-0
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'c_modules/Makefile', line 32)
+TEST_CFLAGS := -Wall -O3 -g -Wno-unused  -Wpedantic -DTEST_ALL -Wno-uninitialized
 # environment
 XDG_SESSION_DESKTOP = ubuntu
-# makefile (from 'c_modules/make_conf/algo_conf.mk', line 1)
-MAKEFILE_LIST := Makefile c_modules/Makefile c_modules/cmod_conf.mk c_modules/data_structures/Makefile c_modules/make_conf/ds_conf.mk c_modules/data_structures/utests/Makefile c_modules/algorithms/Makefile c_modules/make_conf/algo_conf.mk
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 1)
+MAKEFILE_LIST := Makefile c_modules/Makefile c_modules/makefiles/algo_Makefile.mk c_modules/make_conf/algo_conf.mk c_modules/makefiles/ds_Makefile.mk c_modules/make_conf/ds_conf.mk
 # environment
 SNAP_REEXEC = 
 # automatic
 @F = $(notdir $@)
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 7)
-_DSTEST_SRCS := ringbuf_test.c
 # environment
 VSCODE_PID = 10142
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 22)
-DS_SRCS := c_modules/data_structures/src/RingBuf.c
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 14)
-DSTESTALL_OBJ :=  build/c_modules/data_structures/obj/tests/all/TestAll.o
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 21)
+DS_SRCS := c_modules/src/data_structures/RingBuf.c
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -162,39 +150,38 @@ XDG_SESSION_TYPE = wayland
 SESSION_MANAGER = local/DellPC:@/tmp/.ICE-unix/954,unix/DellPC:/tmp/.ICE-unix/954
 # automatic
 *F = $(notdir $*)
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 27)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 26)
 DS_LIBFLAGS := lib/c_modules/data_structures/libDataStruct.a
-# makefile (from 'c_modules/cmod_conf.mk', line 17)
-TESTSINGLE_CFLAGS := -Wall -O3 -g -DTEST_SINGLE
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
+# makefile (from 'c_modules/Makefile', line 8)
+CMODEXMPLE_DIR := c_modules/examples
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'c_modules/Makefile', line 23)
+CMODTEST_OUT := build/c_modules/TestAll
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # makefile
 SHELL = /bin/sh
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 4)
-_DSTESTALL_SRC := TestAll.c
 # default
 MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
- 
 # environment
 SHLVL = 1
 # environment
 GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/e2476a9d_7725_4dad_9cf7_a59af0fd8597
 # environment
 MAKELEVEL := 0
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 4)
-DS_INCDIR := c_modules/data_structures/inc
+# makefile (from 'c_modules/Makefile', line 12)
+DS_INCDIR := c_modules/include/data_structures
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
@@ -203,36 +190,34 @@ SNAP_COOKIE = mK-0uQhfo4VBT2eGH8x9kILle-7Vb-3pmk2T90p6Qjbd0kFFOZ_l
 PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 7)
 ALGO_LIBDIR := lib/c_modules/algorithms
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 11)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 10)
 DS_OBJDIR := build/c_modules/data_structures/obj
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 12)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 11)
 DS_TESTOBJDIR := build/c_modules/data_structures/obj/tests
 # default
 MAKEFILES := 
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 3)
-DS_SRCDIR := c_modules/data_structures/src
+# makefile (from 'c_modules/Makefile', line 11)
+DS_SRCDIR := c_modules/src/data_structures
 # automatic
 ^F = $(notdir $^)
-# makefile (from 'c_modules/cmod_conf.mk', line 19)
+# makefile (from 'c_modules/Makefile', line 34)
 LIBFLAGS := 
 # environment
 SNAP_USER_COMMON = /home/ben/snap/code/common
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 8)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 7)
 DS_LIBDIR := lib/c_modules/data_structures
 # environment
 SNAP = /snap/code/103
-# makefile (from 'c_modules/cmod_conf.mk', line 6)
-DS_DIR := c_modules/data_structures
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 8)
-_DSTEST_OBJS := ringbuf_test.o
 # environment
 SNAP_REVISION = 103
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 19)
 _ALGO_OBJS := 
 # environment
 SNAP_REAL_HOME = /home/ben
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 2)
-DSTESTALL_TARGET := build/c_modules/data_structures/bin/TestAll
+# makefile (from 'c_modules/Makefile', line 4)
+CMODMAKE_DIR := c_modules/makefiles
+# makefile (from 'c_modules/Makefile', line 37)
+_CMOD_MAKEFILES := algo_Makefile.mk ds_Makefile.mk
 # environment
 USERNAME = ben
 # environment
@@ -240,7 +225,7 @@ GNOME_SETUP_DISPLAY = :1
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 4)
-ALGO_TESTDIR := c_modules/algorithms/utests
+ALGO_TESTDIR := /utests
 # automatic
 ?F = $(notdir $?)
 # environment
@@ -258,22 +243,20 @@ ALGO_TESTOBJDIR := build/c_modules/algorithms/obj/tests
 # 'override' directive
 GNUMAKEFLAGS := 
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 28)
-ALGO_INCFLAGS :=  -Ic_modules/algorithms/inc 
+ALGO_INCFLAGS := -Ic_modules/include -I/inc 
 # environment
 LOGNAME = ben
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 16)
 ALGO_LIBOUT := lib/c_modules/algorithms/libAlgorithms.a
 # environment
 SNAP_ARCH = amd64
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 13)
-DSTESTALL_SRC :=  c_modules/data_structures/utests/TestAll.c
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 23)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 22)
 DS_OBJS := build/c_modules/data_structures/obj/RingBuf.o
 # makefile
-.DEFAULT_GOAL := ds_testall
+.DEFAULT_GOAL := algo_all
 # environment
 SYSTEMD_EXEC_PID = 986
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 20)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 19)
 _DS_LIBS := RingBuf.a
 # makefile (from 'Makefile', line 5)
 CMOD_DIR := c_modules
@@ -288,53 +271,51 @@ MAKE_VERSION := 4.3
 # environment
 DISABLE_WAYLAND = 1
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 2)
-ALGO_SRCDIR := c_modules/algorithms/src
+ALGO_SRCDIR := /src
 # environment
 SNAP_DATA = /var/snap/code/103
- 
 # environment
 SNAP_CONTEXT = mK-0uQhfo4VBT2eGH8x9kILle-7Vb-3pmk2T90p6Qjbd0kFFOZ_l
+ 
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 18)
 _ALGO_SRCS := 
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 12)
-DSTESTSING_OBJS :=  build/c_modules/data_structures/obj/tests/single/ringbuf_test.o
-# makefile (from 'c_modules/cmod_conf.mk', line 7)
-ALGO_DIR := c_modules/algorithms
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 29)
-DSTEST_INCFLAGS :=  -Ic_modules/data_structures/inc -Ic_modules/data_structures/utests
+# makefile (from 'c_modules/Makefile', line 6)
+CMODSRC_DIR := c_modules/src
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 28)
+DSTEST_INCFLAGS := -Ic_modules/include -Ic_modules/include/data_structures -Ic_modules/utests -Ic_modules/utests/data_structures
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 13)
 ALGO_TESTALLOBJDIR := build/c_modules/algorithms/obj/tests/all
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 7)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 6)
 DS_BUILDDIR := build/c_modules/data_structures
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 14)
 ALGO_TESTSINGLEOBJDIR := build/c_modules/algorithms/obj/tests/single
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 5)
-DS_TESTDIR := c_modules/data_structures/utests
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 4)
+DS_TESTDIR := c_modules/utests/data_structures
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# makefile (from 'c_modules/cmod_conf.mk', line 14)
-CFLAGS := -Wall -O3 -g
+# makefile (from 'c_modules/Makefile', line 30)
+CFLAGS := -Wall -O3 -g -Wno-unused  -Wpedantic
 # environment
 COLORTERM = truecolor
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/ben/snap/code/common/.cache/gdk-pixbuf-loaders.cache
-# makefile (from 'c_modules/cmod_conf.mk', line 3)
+# makefile (from 'c_modules/Makefile', line 3)
 CMODLIB_DIR := lib/c_modules
 # environment
 XDG_SESSION_CLASS = user
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# makefile (from 'c_modules/Makefile', line 17)
+_CMODTEST_SRC := TestAll.c
 # environment
 HOME = /home/ben
 # environment
 QT_IM_MODULE = ibus
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 6)
 ALGO_BUILDDIR := build/c_modules/algorithms
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 18)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 17)
 _DS_SRCS := RingBuf.c
-# makefile (from 'c_modules/data_structures/utests/Makefile', line 5)
-_DSTESTALL_OBJ := TestAll.o
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 16)
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 15)
 DS_LIBOUT := lib/c_modules/data_structures/libDataStruct.a
 # environment
 ELECTRON_RUN_AS_NODE = 1
@@ -352,12 +333,12 @@ IM_CONFIG_PHASE = 1
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
-# makefile (from 'c_modules/cmod_conf.mk', line 10)
-MERC_LIBOUT := lib/libMercury.a
+# makefile (from 'c_modules/Makefile', line 24)
+MERC_LIBOUT := lib/c_modules/libMercury.a
 # environment
 SNAP_VERSION = da76f933
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 5)
-ALGO_EXMPLDIR := c_modules/algorithms/examples
+ALGO_EXMPLDIR := /examples
 # default
 SUFFIXES := 
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 22)
@@ -374,25 +355,26 @@ SNAP_COMMON = /var/snap/code/common
 ALGO_LIBFLAGS :=  -lAlgorithms
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
-# makefile (from 'c_modules/cmod_conf.mk', line 13)
+# makefile (from 'c_modules/Makefile', line 27)
 CC := gcc
 # makefile (from 'Makefile', line 2)
 BUILDDIR := build
+# makefile (from 'c_modules/Makefile', line 18)
+_CMODTEST_OBJ := TestAll.o
 # makefile (from 'c_modules/make_conf/algo_conf.mk', line 23)
 ALGO_OBJS := 
 # environment
 SNAP_USER_DATA = /home/ben/snap/code/103
 # environment
 XDG_MENU_PREFIX = gnome-
-# makefile (from 'c_modules/make_conf/ds_conf.mk', line 28)
-DS_INCFLAGS :=  -Ic_modules/data_structures/inc
+# makefile (from 'c_modules/make_conf/ds_conf.mk', line 27)
+DS_INCFLAGS := -Ic_modules/include -Ic_modules/include/data_structures
 # environment
 GDMSESSION = ubuntu
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
- 
-# Load=183/1024=18%, Rehash=0, Collisions=40/344=12%
+# Load=181/1024=18%, Rehash=0, Collisions=40/336=12%
 
 # Pattern-specific Variable Values
 
@@ -400,63 +382,63 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# c_modules/data_structures/utests (device 2050, inode 25824555): No files, no impossibilities so far.
-# c_modules/algorithms/src: could not be stat'd.
+# /src: could not be stat'd.
+# c_modules/src/data_structures (device 2050, inode 25956839): No files, no impossibilities so far.
 # . (device 2050, inode 25822886): 12 files, no impossibilities.
-# c_modules/data_structures/src (device 2050, inode 25956236): No files, no impossibilities so far.
+# c_modules/utests/data_structures (device 2050, inode 25958384): No files, no impossibilities so far.
 
 # 12 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
-build/c_modules/data_structures/obj/tests/all/%.o: c_modules/data_structures/utests/%.c
-#  recipe to execute (from 'c_modules/data_structures/utests/Makefile', line 39):
+build/c_modules/algorithms/obj/%.o: /src/%.c
+#  recipe to execute (from 'c_modules/makefiles/algo_Makefile.mk', line 23):
+	$(CC) $(ALGO_CFLAGS) $(ALGO_INCFLAGS) -c $< -o $@ $(ALGO_LIBFLAGS)
+
+build/c_modules/data_structures/obj/tests/all/%.o: c_modules/utests/data_structures/%.c
+#  recipe to execute (from 'c_modules/makefiles/ds_Makefile.mk', line 24):
 	$(CC) $(TESTALL_CFLAGS) $(DSTEST_INCFLAGS) -c $< -o $@
 
-build/c_modules/data_structures/obj/tests/single/%.o: c_modules/data_structures/utests/%.c
-#  recipe to execute (from 'c_modules/data_structures/utests/Makefile', line 42):
+build/c_modules/data_structures/obj/tests/single/%.o: c_modules/utests/data_structures/%.c
+#  recipe to execute (from 'c_modules/makefiles/ds_Makefile.mk', line 27):
 	$(CC) $(TESTSINGLE_CFLAGS) $(DSTEST_INCFLAGS) -c $< -o $@
 
-build/c_modules/data_structures/obj/%.o: c_modules/data_structures/src/%.c
-#  recipe to execute (from 'c_modules/data_structures/Makefile', line 24):
+build/c_modules/data_structures/obj/%.o: c_modules/src/data_structures/%.c
+#  recipe to execute (from 'c_modules/makefiles/ds_Makefile.mk', line 30):
 	@echo TESTALL DS_LIBOUT OBJS
 	$(CC) $(CFLAGS) $(DS_INCFLAGS) -c $< -o $@
-
-build/c_modules/algorithms/obj/%.o: c_modules/algorithms/src/%.c
-#  recipe to execute (from 'c_modules/algorithms/Makefile', line 23):
-	$(CC) $(ALGO_CFLAGS) $(ALGO_INCFLAGS) -c $< -o $@ $(ALGO_LIBFLAGS)
 
 # 4 implicit rules, 0 (0.0%) terminal.
 # Files
 
-# Not a target:
-c_modules/cmod_conf.mk:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-08 05:23:52.542615034
-#  File has been updated.
-#  Successfully updated.
+build/c_modules/TestAll: build/c_modules/TestAll.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'c_modules/Makefile', line 58):
+	$(CC) $(DSTEST_INCFLAGS) $< $(DSTEST_OBJS) -o $@ $(DS_LIBFLAGS)
+
+lib/c_modules/libMercury.a: build/c_modules/data_structures/obj/RingBuf.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'c_modules/Makefile', line 61):
+	ar rcs $@ $^
 
 cmod_remake: cmod_cleaner all
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/Makefile', line 18):
+#  recipe to execute (from 'c_modules/Makefile', line 65):
 	
-
-build/c_modules/data_structures/obj/tests/all/TestAll.o: c_modules/data_structures/utests/TestAll.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'c_modules/data_structures/utests/Makefile', line 36):
-	$(CC) $(TESTALL_CFLAGS) $(DSTEST_INCFLAGS) -c $^ -o $@ 	
 
 ds_clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/data_structures/Makefile', line 32):
+#  recipe to execute (from 'c_modules/makefiles/ds_Makefile.mk', line 38):
 	@$(RM) -rf $(DS_BUILDDIR)
 	@$(RM) -rf $(DS_LIBDIR)
 
@@ -464,7 +446,7 @@ algo_tests:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/algorithms/Makefile', line 9):
+#  recipe to execute (from 'c_modules/makefiles/algo_Makefile.mk', line 9):
 	$(MAKE) -C utests all
 
 out_dirs:
@@ -484,9 +466,8 @@ cmod_all: cmod_cleaner cmod_dirs cmod_tests cmod_libs
 #  File does not exist.
 #  File has not been updated.
 
-ds_testall: lib/c_modules/data_structures/libDataStruct.a build/c_modules/data_structures/obj/tests/all/ringbuf_test.o build/c_modules/data_structures/bin/TestAll
+ds_testall: lib/c_modules/data_structures/libDataStruct.a
 #  Phony target (prerequisite of .PHONY).
- 
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -501,13 +482,13 @@ lib/c_modules/algorithms/libAlgorithms.a:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/algorithms/Makefile', line 26):
+#  recipe to execute (from 'c_modules/makefiles/algo_Makefile.mk', line 26):
 	ar rvs $@ $^
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-08 04:50:19.311526411
+#  Last modified 2022-08-08 07:21:45.168881561
 #  File has been updated.
 #  Successfully updated.
 
@@ -517,24 +498,23 @@ dirs: out_dirs cmod_dirs
 #  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-c_modules/data_structures/utests/Makefile:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-08 05:39:58.546920549
-#  File has been updated.
-#  Successfully updated.
-
 algo_dirs: out_dirs
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/algorithms/Makefile', line 12):
+#  recipe to execute (from 'c_modules/makefiles/algo_Makefile.mk', line 12):
 	@mkdir -p $(ALGO_BUILDDIR)
 	@mkdir -p $(ALGO_OBJDIR)
 	@mkdir -p $(ALGO_BINDIR)
 	@mkdir -p $(ALGO_LIBDIR)
 	@mkdir -p $(ALGO_TESTALLOBJDIR)
 	@mkdir -p $(ALGO_TESTSINGLEOBJDIR)
+
+# Not a target:
+c_modules/utests/TestAll.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 clean: cmod_clean
 #  Phony target (prerequisite of .PHONY).
@@ -548,7 +528,7 @@ algo_all: algo_clean algo_dirs algo_tests algo_libs
 #  File does not exist.
 #  File has not been updated.
 
-tests: cmod_tests
+tests: cmod_libs cmod_tests
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -561,13 +541,6 @@ c_modules/make_conf/algo_conf.mk:
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-c_modules/algorithms/Makefile:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-08 03:41:38.009197285
-#  File has been updated.
-#  Successfully updated.
-
 cleaner:
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
@@ -576,7 +549,6 @@ cleaner:
 #  Needs to be updated (-q is set).
 # automatic
 # @ := cleaner
- 
 # automatic
 # * := 
 # automatic
@@ -584,6 +556,7 @@ cleaner:
 # automatic
 # + := 
 # automatic
+ 
 # % := 
 # automatic
 # ^ := 
@@ -600,7 +573,7 @@ cleaner:
 # Not a target:
 c_modules/make_conf/ds_conf.mk:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-08 05:34:32.673257749
+#  Last modified 2022-08-08 08:24:32.081305834
 #  File has been updated.
 #  Successfully updated.
 
@@ -609,6 +582,13 @@ remake: cmod_remake
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+
+build/c_modules/TestAll.o: c_modules/utests/TestAll.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'c_modules/Makefile', line 55):
+	$(CC) $(TEST_CFLAGS) $(DSTEST_INCFLAGS) -c $^ -o $@ 	
 
 # Not a target:
 .DEFAULT:
@@ -621,7 +601,7 @@ cmod_cleaner:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/Makefile', line 24):
+#  recipe to execute (from 'c_modules/Makefile', line 71):
 	@$(RM) -rf $(CMODBUILD_DIR)
 	@$(RM) -rf $(CMODLIB_DIR)
 
@@ -635,18 +615,16 @@ all: cleaner dirs tests
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
-cmod_libs: ds_libs
+cmod_libs: ds_libs lib/c_modules/libMercury.a
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/Makefile', line 14):
-	
 
 lib/c_modules/data_structures/libDataStruct.a: build/c_modules/data_structures/obj/RingBuf.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/data_structures/Makefile', line 28):
+#  recipe to execute (from 'c_modules/makefiles/ds_Makefile.mk', line 34):
 	@echo TESTALL DS_LIBOUT
 	ar rcs $@ $^
 
@@ -656,49 +634,22 @@ libs: cmod_libs
 #  File does not exist.
 #  File has not been updated.
 
-# Not a target:
-c_modules/data_structures/utests/TestAll.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 cmod_clean: ds_clean algo_clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
-#  recipe to execute (from 'c_modules/Makefile', line 21):
+#  recipe to execute (from 'c_modules/Makefile', line 68):
 	
-
-build/c_modules/data_structures/bin/TestAll: build/c_modules/data_structures/obj/tests/all/TestAll.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'c_modules/data_structures/utests/Makefile', line 33):
-	$(CC) $(DSTEST_INCFLAGS) $< $(DSTESTALL_OBJS) -o $@ $(DS_LIBFLAGS)
 
 ds_tests: ds_testall
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/data_structures/Makefile', line 10):
+#  recipe to execute (from 'c_modules/makefiles/ds_Makefile.mk', line 9):
 	$(DSTESTALL_TARGET)
 	
-
-# Not a target:
-c_modules/data_structures/Makefile:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-08 05:42:02.249090162
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-build/c_modules/data_structures/obj/tests/all/ringbuf_test.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 ds_libs: lib/c_modules/data_structures/libDataStruct.a
 #  Phony target (prerequisite of .PHONY).
@@ -715,7 +666,7 @@ algo_libs: lib/c_modules/algorithms/libAlgorithms.a
 # Not a target:
 c_modules/Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-08 04:33:10.532767949
+#  Last modified 2022-08-08 08:20:40.052785583
 #  File has been updated.
 #  Successfully updated.
 
@@ -724,9 +675,16 @@ algo_clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/algorithms/Makefile', line 29):
+#  recipe to execute (from 'c_modules/makefiles/algo_Makefile.mk', line 29):
 	@$(RM) -rf $(ALGO_BUILDDIR)
 	@$(RM) -rf $(ALGO_LIBDIR)
+
+# Not a target:
+c_modules/makefiles/ds_Makefile.mk:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-08 08:18:12.693840808
+#  File has been updated.
+#  Successfully updated.
 
 ds_all: ds_clean ds_dirs ds_libs
 #  Phony target (prerequisite of .PHONY).
@@ -738,7 +696,7 @@ ds_dirs: out_dirs
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/data_structures/Makefile', line 13):
+#  recipe to execute (from 'c_modules/makefiles/ds_Makefile.mk', line 12):
 	@mkdir -p $(DS_BUILDDIR)
 	@mkdir -p $(DS_OBJDIR)
 	@mkdir -p $(DS_BINDIR)
@@ -752,18 +710,24 @@ ds_dirs: out_dirs
 #  Modification time never checked.
 #  File has not been updated.
 
-.PHONY: ds_testall ds_all ds_libs ds_clean ds_tests algo_all algo_libs algo_clean cmod_dirs cmod_all cmod_clean cmod_cleaner cmod_remake all dirs clean remake tests libs
+.PHONY: algo_all algo_libs algo_clean ds_all ds_libs ds_clean ds_tests ds_testall cmod_dirs cmod_all cmod_clean cmod_cleaner cmod_remake all dirs clean remake tests libs
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-cmod_tests: ds_tests
+cmod_tests: lib/c_modules/data_structures/libDataStruct.a build/c_modules/TestAll
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
-#  recipe to execute (from 'c_modules/Makefile', line 11):
+#  recipe to execute (from 'c_modules/Makefile', line 50):
 	
+
+# Not a target:
+c_modules/makefiles/algo_Makefile.mk:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-08 03:41:38.009197285
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 build/c_modules/data_structures/obj/RingBuf.o:
@@ -772,19 +736,19 @@ build/c_modules/data_structures/obj/RingBuf.o:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=44/1024=4%, Rehash=0, Collisions=0/155=0%
+# Load=42/1024=4%, Rehash=0, Collisions=6/152=4%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 67 / storage = 1291 B / avg = 19 B
-# current buf: size = 8162 B / used = 1291 B / count = 67 / avg = 19 B
+# strcache buffers: 1 (0) / strings = 65 / storage = 1093 B / avg = 16 B
+# current buf: size = 8162 B / used = 1093 B / count = 65 / avg = 16 B
 
-# strcache performance: lookups = 176 / hit rate = 61%
+# strcache performance: lookups = 174 / hit rate = 62%
 # hash-table stats:
-# Load=67/8192=1%, Rehash=0, Collisions=0/176=0%
-# Finished Make data base on Mon Aug  8 05:42:56 2022
+# Load=65/8192=1%, Rehash=0, Collisions=0/174=0%
+# Finished Make data base on Mon Aug  8 08:24:34 2022
 
  

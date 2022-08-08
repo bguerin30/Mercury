@@ -1,15 +1,27 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/ben/Repos/Mecury'
-DSTESTALL_SRC     =  c_modules/data_structures/utests/TestAll.c
-DSTEST_SRCS       =  c_modules/data_structures/utests/ringbuf_test.c
-DSTESTALL_OBJ     =  build/c_modules/data_structures/obj/tests/all/TestAll.o
-DSTESTALL_OBJS    =  build/c_modules/data_structures/obj/tests/all/ringbuf_test.o
-DSTESTSING_OBJS   =  build/c_modules/data_structures/obj/tests/single/ringbuf_test.o
-DSTESTALL_OBJDIR  = build/c_modules/data_structures/obj/tests/all
-DSTESTSING_OBJDIR = build/c_modules/data_structures/obj/tests/single
-DS_LIBOUT = lib/c_modules/data_structures/libDataStruct.a
-DS_OBJS = build/c_modules/data_structures/obj/RingBuf.o
+rm -f -rf build/c_modules/algorithms
+rm -f -rf lib/c_modules/algorithms
+mkdir -p lib
+mkdir -p build
+mkdir -p build/c_modules
+mkdir -p lib/c_modules
+mkdir -p build/c_modules/algorithms
  
-make: Nothing to be done for 'ds_testall'.
+mkdir -p build/c_modules/algorithms/obj
+mkdir -p build/c_modules/algorithms/bin
+mkdir -p lib/c_modules/algorithms
+mkdir -p build/c_modules/algorithms/obj/tests/all
+mkdir -p build/c_modules/algorithms/obj/tests/single
+make -C utests all
+ 
+make[1]: Entering directory '/home/ben/Repos/Mecury'
+make[1]: Leaving directory '/home/ben/Repos/Mecury'
+ 
+make[1]: *** utests: No such file or directory.  Stop.
+
+make: *** [c_modules/makefiles/algo_Makefile.mk:9: algo_tests] Error 2
+
+ar rvs lib/c_modules/algorithms/libAlgorithms.a 
 make: Leaving directory '/home/ben/Repos/Mecury'
  
