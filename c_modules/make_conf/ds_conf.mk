@@ -10,8 +10,8 @@ DS_BINDIR			:= $(DS_BUILDDIR)/bin
 DS_OBJDIR			:= $(DS_BUILDDIR)/obj
 DS_TESTOBJDIR		:= $(DS_OBJDIR)/tests
 
-DS_LIBOUT		:= libDataStruct.a
-
+_DS_LIBOUT	:= libDataStruct.a
+DS_LIBOUT	:= $(patsubst %,$(DS_LIBDIR)/%,$(_DS_LIBOUT))
 _DS_TINY_LIBOUT	:= libRingBuf.a
 DS_TINY_LIBOUT	:= $(patsubst %,$(DS_LIBDIR)/%,$(_DS_TINY_LIBOUT))
 
