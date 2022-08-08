@@ -1,7 +1,15 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/ben/Repos/Mecury'
+DSTESTALL_SRC     =  c_modules/data_structures/utests/TestAll.c
+DSTEST_SRCS       =  c_modules/data_structures/utests/ringbuf_test.c
+DSTESTALL_OBJ     =  build/c_modules/data_structures/obj/tests/all/TestAll.o
+DSTESTALL_OBJS    =  build/c_modules/data_structures/obj/tests/all/ringbuf_test.o
+DSTESTSING_OBJS   =  build/c_modules/data_structures/obj/tests/single/ringbuf_test.o
+DSTESTALL_OBJDIR  = build/c_modules/data_structures/obj/tests/all
+DSTESTSING_OBJDIR = build/c_modules/data_structures/obj/tests/single
+DS_LIBOUT = lib/c_modules/data_structures/libDataStruct.a
+DS_OBJS = build/c_modules/data_structures/obj/RingBuf.o
  
-make: *** No targets specified and no makefile found.  Stop.
-
+make: Nothing to be done for 'ds_testall'.
 make: Leaving directory '/home/ben/Repos/Mecury'
  

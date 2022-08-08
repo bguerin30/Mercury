@@ -5,10 +5,12 @@
             "includePath": [
                 "${default}",
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/libc/inc/**",
+                "${workspaceFolder}/c_modules/data_structures/inc/**",
                 "/usr/include/**"
             ],
-            "defines": [],
+            "defines": [
+                "TEST_SINGLE"
+            ],
             "compilerPath": "/usr/bin/cpp"
         }
     ],

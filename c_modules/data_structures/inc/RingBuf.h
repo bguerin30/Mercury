@@ -10,6 +10,7 @@
 
 enum RBUF_STATUS
 {
+    RBUF_STATUS_ERR_BAD_ARG = -4,
     RBUF_STATUS_ERR_MEM_OUT_OF_BOUNDS = -3,
     RBUF_STATUS_ERR_OVERFLOW = -2,
     RBUF_STATUS_ERR_INIT = -1,
@@ -27,11 +28,9 @@ enum RBUF_TYPE
 
 struct RingBuf;
 
-enum RBUF_STATUS RingBuf_allocate(struct RingBuf *rbuf, uint8_t *mem, size_t sz);
+struct RingBuf * RingBuf_allocate(uint8_t *mem, size_t sz);
+int RingBuf_push(struct RingBuf *rbuf, const uint8_t *data, size_t len);
+int RingBuf_pop(struct RingBuf *rbuf, uint8_t *buf, size_t len);
+int RingBuf_len(struct RingBuf *rbuf); 
 
-enum RBUF_STATUS RingBuf_push(struct RingBuf *rbuf, const uint8_t *data, size_t len);
-
-enum RBUF_STATUS RingBuf_pop(struct RingBuf *rbuf, uint8_t *buf, size_t len);
-
-uint32_t RingBuf_len(struct RingBuf *rbuf); 
 #endif /* RINGBUF_H__ */
