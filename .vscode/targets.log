@@ -1,55 +1,63 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+LIBDIR = lib
+LIBDIR = build
+ 
+CMOD_MAKEFILES =  c_modules/makefiles/datastructs.mk
+CMOD_INCDIRS = c_modules/include lib/c_modules  c_modules/include/algorithms  c_modules/include/datastructs
+CMOD_INCFLAGS =  -Ic_modules/include  -Ilib/c_modules  -Ic_modules/include/algorithms  -Ic_modules/include/datastructs
+DS_OBJDIR = build/c_modules/obj/datastructs
+ 
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Mon Aug  8 18:31:03 2022
+# Make data base, printed on Tue Aug  9 05:03:41 2022
 
 # Variables
 
-# makefile (from 'c_modules/cmod_makefile.mk', line 44)
-CMOD_OBJS :=  build/c_modules/obj/TestAll.o  build/c_modules/obj/datastructs/RingBuf.o  build/c_modules/obj/datastructs/test_RingBuf.o
+# makefile (from 'c_modules/cmod_makefile.mk', line 85)
+CMOD_OBJS :=  build/c_modules/obj/datastructs/RingBuf.o
 # environment
 GDK_BACKEND = x11
 # makefile (from 'Makefile', line 3)
 LIBDIR := lib
- 
 # environment
 LC_ALL = C
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
 SSH_AGENT_LAUNCHER = gnome-keyring
-# makefile (from 'c_modules/cmod_makefile.mk', line 43)
-CMOD_SRCS :=  c_modules/src/TestAll.c  c_modules/src/datastructs/RingBuf.c  c_modules/src/datastructs/test_RingBuf.c
+# makefile (from 'c_modules/cmod_makefile.mk', line 84)
+CMOD_SRCS :=  c_modules/src/datastructs/RingBuf.c
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
 VSCODE_CWD = /home/ben/Repos/Mecury
-# makefile (from 'c_modules/cmod_makefile.mk', line 19)
+# makefile (from 'c_modules/cmod_makefile.mk', line 58)
+DS_LIBS := RingBuf.a
+# makefile (from 'c_modules/cmod_makefile.mk', line 22)
 CMODBUILD_DIR := build/c_modules
-# makefile (from 'c_modules/cmod_makefile.mk', line 11)
-INCFLAGS := -I
 # default
 MAKE_COMMAND := make
 # environment
 QT_ACCESSIBILITY = 1
-# makefile (from 'c_modules/cmod_makefile.mk', line 40)
-_CMOD_SRCS := TestAll.c datastructs/RingBuf.c datastructs/test_RingBuf.c
+# makefile (from 'c_modules/cmod_makefile.mk', line 67)
+_CMOD_SRCS :=  datastructs/RingBuf.c
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
 SNAP_INSTANCE_NAME = code
-# makefile (from 'c_modules/cmod_makefile.mk', line 16)
+# makefile (from 'c_modules/cmod_makefile.mk', line 18)
 CMODINC_DIR := c_modules/include
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/103/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# makefile (from 'c_modules/cmod_makefile.mk', line 18)
+# makefile (from 'c_modules/cmod_makefile.mk', line 20)
 CMODTEST_DIR := c_modules/utests
 # default
 .VARIABLES := 
@@ -65,8 +73,8 @@ OLDPWD = /home/ben/Repos/ConfigFiles
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
 %F = $(notdir $%)
-# makefile (from 'c_modules/cmod_makefile.mk', line 47)
-CMOD_MAKEFILES := 
+# makefile (from 'c_modules/cmod_makefile.mk', line 89)
+CMOD_MAKEFILES :=  c_modules/makefiles/datastructs.mk
 # environment
 VSCODE_CODE_CACHE_PATH = /home/ben/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
 # environment
@@ -83,8 +91,8 @@ GNOME_TERMINAL_SERVICE = :1.109
 MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/ben/Repos/Mecury
-# makefile (from 'c_modules/cmod_makefile.mk', line 41)
-_CMOD_BINS := TestAll datastructs/test_RingBuf
+# makefile (from 'c_modules/cmod_makefile.mk', line 69)
+_CMOD_BINS := TestAll  datastructs/test_RingBuf
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
@@ -96,6 +104,7 @@ MFLAGS = -pqrR
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # default
+ 
 .SHELLFLAGS := -c
 # environment
 WAYLAND_DISPLAY = wayland-0
@@ -103,26 +112,32 @@ WAYLAND_DISPLAY = wayland-0
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# makefile (from 'c_modules/cmod_makefile.mk', line 20)
+# makefile (from 'c_modules/cmod_makefile.mk', line 23)
 CMODBIN_DIR := build/c_modules/bin
-# makefile (from 'c_modules/cmod_makefile.mk', line 9)
-TEST_CFLAGS := -Wall -O3 -g -Wno-unused  -Wpedantic -DTEST_ALL -Wno-uninitialized
+# makefile (from 'c_modules/cmod_makefile.mk', line 11)
+TEST_CFLAGS := -Wall -O3 -g -Wno-unused  -Wpedantic -Wno-uninitialized -DTEST_ALL 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
-# makefile (from 'c_modules/cmod_makefile.mk', line 1)
-MAKEFILE_LIST := Makefile c_modules/cmod_makefile.mk
+# makefile (from 'c_modules/makefiles/datastructs.mk', line 1)
+MAKEFILE_LIST := Makefile c_modules/cmod_makefile.mk c_modules/makefiles/datastructs.mk
 # environment
 SNAP_REEXEC = 
 # automatic
 @F = $(notdir $@)
-# makefile (from 'c_modules/cmod_makefile.mk', line 21)
+# makefile (from 'c_modules/cmod_makefile.mk', line 24)
 CMODOBJ_DIR := build/c_modules/obj
 # environment
 VSCODE_PID = 10142
+# makefile (from 'c_modules/cmod_makefile.mk', line 57)
+DS_SRCS := RingBuf.c 
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'c_modules/cmod_makefile.mk', line 87)
+CMOD_TESTOBJS :=  build/c_modules/obj/TestAll.o  build/c_modules/obj/c_modules/utests/datastructs/test_RingBuf.o
+# makefile (from 'c_modules/cmod_makefile.mk', line 77)
+CMOD_INCDIRS := c_modules/include lib/c_modules  c_modules/include/algorithms  c_modules/include/datastructs
 # environment
 SESSION_MANAGER = local/DellPC:@/tmp/.ICE-unix/954,unix/DellPC:/tmp/.ICE-unix/954
 # automatic
@@ -133,10 +148,12 @@ CHROME_DESKTOP = code-url-handler.desktop
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
-# makefile (from 'c_modules/cmod_makefile.mk', line 17)
+# makefile (from 'c_modules/cmod_makefile.mk', line 19)
 CMODEXMPLE_DIR := c_modules/examples
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'c_modules/cmod_makefile.mk', line 60)
+DS_BINS := test_RingBuf
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -148,9 +165,10 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # environment
+ 
 SHLVL = 1
-# makefile (from 'c_modules/cmod_makefile.mk', line 39)
-CMOD_MKDIRS := build/c_modules build/c_modules/bin build/c_modules/obj lib/c_modules lib/c_modules/algorithms lib/c_modules/datastructs
+# makefile (from 'c_modules/cmod_makefile.mk', line 76)
+CMOD_MKDIRS := build/c_modules build/c_modules/bin build/c_modules/obj lib/c_modules  lib/c_modules/algorithms  lib/c_modules/datastructs  build/c_modules/obj/algorithms  build/c_modules/obj/datastructs
 # environment
 GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/e2476a9d_7725_4dad_9cf7_a59af0fd8597
 # environment
@@ -161,24 +179,38 @@ MAKE = $(MAKE_COMMAND)
 SNAP_COOKIE = mK-0uQhfo4VBT2eGH8x9kILle-7Vb-3pmk2T90p6Qjbd0kFFOZ_l
 # environment
 PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+# makefile (from 'c_modules/cmod_makefile.mk', line 59)
+DS_TESTSRCS := test_RingBuf.c	
+# makefile (from 'c_modules/cmod_makefile.mk', line 62)
+DS_OBJDIR := build/c_modules/obj/datastructs
 # default
 MAKEFILES := 
+# makefile (from 'c_modules/cmod_makefile.mk', line 66)
+CMOD_LIBS :=  datastructs/RingBuf.a
 # automatic
 ^F = $(notdir $^)
-# makefile (from 'c_modules/cmod_makefile.mk', line 10)
-LIBFLAGS := -L
 # environment
 SNAP_USER_COMMON = /home/ben/snap/code/common
-# makefile (from 'c_modules/cmod_makefile.mk', line 30)
+# makefile (from 'c_modules/cmod_makefile.mk', line 46)
 ALGO_FOLDER := algorithms
-# makefile (from 'c_modules/cmod_makefile.mk', line 36)
+# makefile (from 'c_modules/cmod_makefile.mk', line 56)
 DS_FOLDER := datastructs
 # environment
 SNAP = /snap/code/103
+# makefile (from 'c_modules/cmod_makefile.mk', line 63)
+DS_LIBDIR := lib/c_modules/datastructs
 # environment
 SNAP_REVISION = 103
+# makefile (from 'c_modules/cmod_makefile.mk', line 61)
+DS_MAKEFILES := datastructs.mk		
 # environment
 SNAP_REAL_HOME = /home/ben
+# makefile (from 'c_modules/cmod_makefile.mk', line 68)
+_CMOD_TESTSRCS := TestAll.c  c_modules/utests/datastructs/test_RingBuf.c
+# makefile (from 'c_modules/cmod_makefile.mk', line 21)
+CMODMAKE_DIR := c_modules/makefiles
+# makefile (from 'c_modules/cmod_makefile.mk', line 70)
+_CMOD_MAKEFILES := datastructs.mk		
 # environment
 USERNAME = ben
 # environment
@@ -189,6 +221,8 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 ?F = $(notdir $?)
 # environment
 XDG_CURRENT_DESKTOP = Unity
+# makefile (from 'c_modules/cmod_makefile.mk', line 78)
+CMOD_INCFLAGS :=  -Ic_modules/include  -Ilib/c_modules  -Ic_modules/include/algorithms  -Ic_modules/include/datastructs
 # environment
 LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # automatic
@@ -203,8 +237,9 @@ GNUMAKEFLAGS :=
 LOGNAME = ben
 # environment
 SNAP_ARCH = amd64
+ 
 # makefile
-.DEFAULT_GOAL := cmod_all
+.DEFAULT_GOAL := all
 # environment
 SYSTEMD_EXEC_PID = 986
 # makefile (from 'Makefile', line 5)
@@ -219,30 +254,29 @@ GTK_MODULES = gail:atk-bridge
 MAKE_VERSION := 4.3
 # environment
 DISABLE_WAYLAND = 1
-# makefile (from 'c_modules/cmod_makefile.mk', line 37)
+# makefile (from 'c_modules/cmod_makefile.mk', line 65)
 CMOD_FOLDERS := algorithms datastructs
 # environment
 SNAP_DATA = /var/snap/code/103
 # environment
 SNAP_CONTEXT = mK-0uQhfo4VBT2eGH8x9kILle-7Vb-3pmk2T90p6Qjbd0kFFOZ_l
-# makefile (from 'c_modules/cmod_makefile.mk', line 15)
+# makefile (from 'c_modules/cmod_makefile.mk', line 17)
 CMODSRC_DIR := c_modules/src
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# makefile (from 'c_modules/cmod_makefile.mk', line 7)
-CFLAGS := -Wall -O3 -g -Wno-unused  -Wpedantic
+# makefile (from 'c_modules/cmod_makefile.mk', line 9)
+CFLAGS := -Wall -O3 -g -Wno-unused  -Wpedantic -Wno-uninitialized
 # environment
 COLORTERM = truecolor
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/ben/snap/code/common/.cache/gdk-pixbuf-loaders.cache
-# makefile (from 'c_modules/cmod_makefile.mk', line 14)
+# makefile (from 'c_modules/cmod_makefile.mk', line 16)
 CMODLIB_DIR := lib/c_modules
 # environment
 XDG_SESSION_CLASS = user
 # environment
- 
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# makefile (from 'c_modules/cmod_makefile.mk', line 45)
+# makefile (from 'c_modules/cmod_makefile.mk', line 88)
 CMOD_BINS :=  build/c_modules/obj/TestAll  build/c_modules/obj/datastructs/test_RingBuf
 # environment
 HOME = /home/ben
@@ -258,6 +292,8 @@ TERM = xterm-256color
 SNAP_NAME = code
 # environment
 GSETTINGS_SCHEMA_DIR = /snap/code/103/usr/share/glib-2.0/schemas
+# makefile (from 'c_modules/cmod_makefile.mk', line 86)
+CMOD_TESTSRCS :=  c_modules/src/TestAll.c  c_modules/src/c_modules/utests/datastructs/test_RingBuf.c
 # environment
 IM_CONFIG_PHASE = 1
 # default
@@ -270,17 +306,20 @@ SNAP_VERSION = da76f933
 SUFFIXES := 
 # environment
 VSCODE_CLI = 1
+ 
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
-# makefile (from 'c_modules/cmod_makefile.mk', line 38)
-CMOD_OUTLIBS := lib/c_modules/libMercury.a lib/c_modules/algorithms/libAlgorithms.a lib/c_modules/datastructs/libdatastructs.a
+# makefile (from 'c_modules/cmod_makefile.mk', line 80)
+CMOD_OUTLIBS := lib/c_modules/libmercury.a lib/c_modules/libalgorithms.a lib/c_modules/libdatastructs.a  lib/c_modules/datastructs/RingBuf.a
 # environment
 VTE_VERSION = 6800
 # environment
 SNAP_COMMON = /var/snap/code/common
+# makefile (from 'c_modules/cmod_makefile.mk', line 81)
+CMOD_LIBFLAGS := -lmercury  -Ic_modules/include  -Ilib/c_modules  -Ic_modules/include/algorithms  -Ic_modules/include/datastructs  -lalgorithms  -ldatastructs
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
-# makefile (from 'c_modules/cmod_makefile.mk', line 4)
+# makefile (from 'c_modules/cmod_makefile.mk', line 5)
 CC := gcc
 # makefile (from 'Makefile', line 2)
 BUILDDIR := build
@@ -293,7 +332,7 @@ GDMSESSION = ubuntu
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=140/1024=14%, Rehash=0, Collisions=14/244=6%
+# Load=154/1024=15%, Rehash=0, Collisions=25/320=8%
 
 # Pattern-specific Variable Values
 
@@ -301,40 +340,59 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 2050, inode 25822886): 14 files, no impossibilities.
+# c_modules/src/datastructs (device 2050, inode 26083329): No files, no impossibilities so far.
+# / (device 2050, inode 2): No files, no impossibilities so far.
+# build/c_modules/obj (device 2050, inode 26083422): No files, no impossibilities so far.
+# . (device 2050, inode 25822886): 13 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 4 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+build/c_modules/obj/%.o: /%.c
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 107):
+	@echo DataStruct TEST OBJS
+	$(CC) $(TEST_CFLAGS) $(DSTEST_INCFLAGS) -c $< -o $@
 
+build/c_modules/obj/datastructs/%.o: c_modules/src/datastructs/%.c
+#  recipe to execute (from 'c_modules/makefiles/datastructs.mk', line 20):
+	@echo DataStruct OBJS
+	$(CC) $(CFLAGS) $(CMOD_INCFLAGS) -c $< -o $@
+
+lib/c_modules/datastructs/lib%.a: build/c_modules/obj/%.o
+#  recipe to execute (from 'c_modules/makefiles/datastructs.mk', line 24):
+	@echo DS MakeFile $@
+	ar rcs $@ $^
+
+# 3 implicit rules, 0 (0.0%) terminal.
 # Files
 
 cmod_remake: cmod_cleaner all
+ 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 77):
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 124):
 	
 
-# Not a target:
 ds_clean:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
+#  recipe to execute (from 'c_modules/makefiles/datastructs.mk', line 29):
+	@$(RM) -rf $(DS_BUILDDIR)
+	@$(RM) -rf $(DS_LIBDIR)
 
 out_dirs:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 31):
+#  recipe to execute (from 'Makefile', line 33):
+	@echo MAIN MakeFile out_dirs
 	@mkdir -p $(LIBDIR)
 	@mkdir -p $(BUILDDIR)
-	@mkdir -p $(CMODBUILD_DIR)
-	@mkdir -p $(CMODLIB_DIR)
-	
 
 cmod_all: cmod_cleaner cmod_dirs
 #  Phony target (prerequisite of .PHONY).
@@ -346,30 +404,51 @@ cmod_dirs:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 57):
-	@for dir in $(CMOD_MKDIRS); do \
-		mkdir -p $$dir; \
-	done
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 102):
+	$(foreach dir, $(CMOD_MKDIRS), mkdir -p $(dir); )
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-08 18:27:31.887628666
+#  Last modified 2022-08-09 02:13:36.529563114
 #  File has been updated.
 #  Successfully updated.
 
- 
 dirs: out_dirs cmod_dirs
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	@echo MAIN MakeFile dirs
+
+lib/c_modules/libmercury.a: build/c_modules/obj/datastructs/RingBuf.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 120):
+	ar rcs $@ $^
+
+# Not a target:
+c_modules/makefiles/datastructs.mk:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-09 02:28:21.601555326
+#  File has been updated.
+ 
+#  Successfully updated.
 
 clean: cmod_clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+
+lib/c_modules/libalgorithms.a: build/c_modules/obj/datastructs/RingBuf.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 120):
+	ar rcs $@ $^
 
 # Not a target:
 /pymod_makefile.mk:
@@ -378,7 +457,7 @@ clean: cmod_clean
 #  File has been updated.
 #  Failed to be updated.
 
-tests: cmod_libs cmod_tests
+tests: cmod_tests
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -387,7 +466,7 @@ tests: cmod_libs cmod_tests
 # Not a target:
 c_modules/cmod_makefile.mk:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-08 18:30:52.819062286
+#  Last modified 2022-08-09 02:30:09.64350132
 #  File has been updated.
 #  Successfully updated.
 
@@ -415,11 +494,13 @@ cleaner:
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/15=7%
-#  recipe to execute (from 'Makefile', line 26):
+#  recipe to execute (from 'Makefile', line 28):
+	@echo MAIN MakeFile cleaner
 	@$(RM) -rf $(BUILDDIR)
 	@$(RM) -rf $(LIBDIR)
+ 
 
-remake: cmod_remake
+remake: cleaner cmod_all
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -436,11 +517,11 @@ cmod_cleaner:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 83):
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 130):
 	@$(RM) -rf $(CMODBUILD_DIR)
 	@$(RM) -rf $(CMODLIB_DIR)
 
-all: cleaner dirs tests
+all: cleaner dirs libs
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
@@ -449,11 +530,24 @@ all: cleaner dirs tests
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/7=0%
-#  recipe to execute (from 'Makefile', line 22):
-	$(CMODTEST_OUT)
 
- 
-cmod_libs: ds_libs
+cmod_libs: build/c_modules/obj/datastructs/RingBuf.o lib/c_modules/libmercury.a lib/c_modules/libalgorithms.a lib/c_modules/libdatastructs.a lib/c_modules/datastructs/RingBuf.a
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 111):
+	@echo CMOD MakeFile cmod_libs
+
+lib/c_modules/datastructs/RingBuf.a: build/c_modules/obj/datastructs/RingBuf.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 120):
+	ar rcs $@ $^
+
+# Not a target:
+build/c_modules/obj/datastructs/RingBuf.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -463,25 +557,49 @@ libs: cmod_libs
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+	@echo MAIN MakeFile cleaner
 
 cmod_clean: ds_clean algo_clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 80):
+ 
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 127):
 	
 
-# Not a target:
-ds_libs:
+ds_tests: ds_libs
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+lib/c_modules/libdatastructs.a: build/c_modules/obj/datastructs/RingBuf.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 120):
+	ar rcs $@ $^
+
+ds_libs:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'c_modules/makefiles/datastructs.mk', line 13):
+	@echo DS MakeFile ds_libs
 
 # Not a target:
 algo_clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+#  File has not been updated.
+
+ds_all: ds_clean ds_libs
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has not been updated.
 
 # Not a target:
@@ -490,32 +608,34 @@ algo_clean:
 #  Modification time never checked.
 #  File has not been updated.
 
-.PHONY: cmod_all cmod_clean cmod_cleaner cmod_remake all dirs clean remake tests libs
+.PHONY: all dirs clean remake tests libs cmod_all cmod_libs cmod_tests cmod_clean cmod_cleaner cmod_remake ds_all ds_libs ds_clean ds_tests
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 cmod_tests:
+#  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
-#  Modification time never checked.
+#  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 62):
+#  recipe to execute (from 'c_modules/cmod_makefile.mk', line 105):
 	
 
 # files hash-table stats:
-# Load=24/1024=2%, Rehash=0, Collisions=0/78=0%
+# Load=32/1024=3%, Rehash=0, Collisions=0/112=0%
 # VPATH Search Paths
 
+ 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 39 / storage = 377 B / avg = 9 B
-# current buf: size = 8162 B / used = 377 B / count = 39 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 54 / storage = 750 B / avg = 13 B
+# current buf: size = 8162 B / used = 750 B / count = 54 / avg = 13 B
 
-# strcache performance: lookups = 89 / hit rate = 56%
+# strcache performance: lookups = 131 / hit rate = 58%
 # hash-table stats:
-# Load=39/8192=0%, Rehash=0, Collisions=0/89=0%
-# Finished Make data base on Mon Aug  8 18:31:03 2022
+# Load=54/8192=1%, Rehash=0, Collisions=0/131=0%
+# Finished Make data base on Tue Aug  9 05:03:41 2022
 
  

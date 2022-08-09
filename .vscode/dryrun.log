@@ -1,13 +1,20 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/ben/Repos/Mecury'
- 
-rm -f -rf build/c_modules
- 
-rm -f -rf lib/c_modules
- 
-for dir in build/c_modules build/c_modules/bin build/c_modules/obj lib/c_modules lib/c_modules/algorithms lib/c_modules/datastructs; do \
-	mkdir -p $dir; \
-done
- 
+LIBDIR = lib
+LIBDIR = build
+CMOD_MAKEFILES =  c_modules/makefiles/datastructs.mk
+CMOD_INCDIRS = c_modules/include lib/c_modules  c_modules/include/algorithms  c_modules/include/datastructs
+CMOD_INCFLAGS =  -Ic_modules/include  -Ilib/c_modules  -Ic_modules/include/algorithms  -Ic_modules/include/datastructs
+DS_OBJDIR = build/c_modules/obj/datastructs
+echo MAIN MakeFile cleaner
+rm -f -rf build
+rm -f -rf lib
+echo MAIN MakeFile out_dirs
+mkdir -p lib
+mkdir -p build
+mkdir -p build/c_modules;   mkdir -p build/c_modules/bin;   mkdir -p build/c_modules/obj;   mkdir -p lib/c_modules;   mkdir -p lib/c_modules/algorithms;   mkdir -p lib/c_modules/datastructs;   mkdir -p build/c_modules/obj/algorithms;   mkdir -p build/c_modules/obj/datastructs; 
+echo MAIN MakeFile dirs
+echo CMOD MakeFile cmod_libs
+echo MAIN MakeFile cleaner
 make: Leaving directory '/home/ben/Repos/Mecury'
  
