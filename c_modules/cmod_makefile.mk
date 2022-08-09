@@ -55,8 +55,8 @@ _CMOD_MAKEFILES	+=
 #=============================================================
 DS_FOLDER		:= datastructs
 DS_SRCS			:= RingBuf.c 
-DS_LIBS			:= $(DS_SRCS:.c=.a)
 DS_TESTSRCS		:= test_RingBuf.c	
+DS_LIBS			:= $(DS_SRCS:.c=.a)
 DS_BINS			:= test_RingBuf
 DS_MAKEFILES	:= $(DS_FOLDER).mk		
 DS_OBJDIR		:= $(CMODOBJ_DIR)/$(DS_FOLDER)
@@ -85,60 +85,59 @@ CMOD_SRCS		:= $(patsubst %, $(CMODSRC_DIR)/%, $(_CMOD_SRCS))
 CMOD_OBJS		:= $(patsubst %, $(CMODOBJ_DIR)/%, $(_CMOD_SRCS:.c=.o))
 CMOD_TESTSRCS	:= $(patsubst %, $(CMODSRC_DIR)/%, $(_CMOD_TESTSRCS))
 CMOD_TESTOBJS	:= $(patsubst %, $(CMODOBJ_DIR)/%, $(_CMOD_TESTSRCS:.c=.o))
-CMOD_BINS		:= $(patsubst %, $(CMODOBJ_DIR)/%, $(_CMOD_BINS))
+CMOD_BINS		:= $(patsubst %, $(CMODBIN_DIR)/%, $(_CMOD_BINS))
 CMOD_MAKEFILES	:= $(patsubst %, $(CMODMAKE_DIR)/%,$(_CMOD_MAKEFILES))
-
-$(info CMOD_MAKEFILES = $(CMOD_MAKEFILES))
-$(info CMOD_INCDIRS = $(CMOD_INCDIRS))
-$(info CMOD_INCFLAGS = $(CMOD_INCFLAGS))
 
 #TODO: Target to Copy over each libraries header file
 #TODO: Write header file for each library
-.PHONY: cmod_all cmod_dirs cmod_libs cmod_tests cmod_clean cmod_cleaner cmod_remake
+.PHONY: cmod_all cmod_dirs cmod_clean cmod_cleaner cmod_remake
 
 cmod_all: cmod_cleaner cmod_dirs
-	@echo CMOD cmod_all
+	@echo ----------- CMOD cmod_all
+
+$(CMODBIN_DIR)/%: $(CMODOBJ_DIR)/%.o
+	@echo ----------- CMOD Makefile cmod BINS
 
 $(CMODOBJ_DIR)/%.o: $(DS_TESTDIR)/%.c
-	@echo CMOD $@
+	@echo ----------- CMOD Makefile cmod OBJS
 	$(CC) $(TEST_CFLAGS) $(DSTEST_INCFLAGS) -c $< -o $@
 
 $(CMODTEST_OBJ): $(CMODTEST_SRC)
-	@echo CMOD S(CMODTEST_OBJ)
+	@echo ----------- CMOD Makefile S(CMODTEST_OBJ)
 	$(CC) $(TEST_CFLAGS) $(DSTEST_INCFLAGS) -c $^ -o $@ 	
 
 $(CMODTEST_OUT): $(CMODTEST_OBJ)
-	@echo CMOD S(CMODTEST_OUT)
+	@echo ----------- CMOD Makefile CMODTEST_OUT
 	$(CC) $(DSTEST_INCFLAGS) $< $(ALGO_TEST_OBJS) -o $@ $(ALGO_LIBFLAGS)
 
 $(CMOD_OUTLIBS): $(CMOD_OBJS)
-	@echo CMOD S(CMOD_OUTLIBS)
+	@echo ----------- CMOD Makefile CMOD_OUTLIBS
 	ar rcs $@ $^
 
 #Make output dirs
 cmod_dirs: 
-	@echo CMOD cmod_dirs 
+	@echo ----------- CMOD cmod_dirs 
 	$(foreach dir, $(CMOD_MKDIRS), mkdir -p $(dir); )
 
 #Run test binarys that were generated
-cmod_tests: $(ALGO_LIBOUT) $(ALGO_TEST_OBJS) $(CMODTEST_OUT) #algo_tests
-	@echo CMOD cmod_tests
+cmod_tests: $(ALGO_LIBOUT) $(CMODTEST_OUT) #algo_tests
+	@echo ----------- CMOD cmod_tests
 	$(foreach bin, $(CMOD_BINS), $(bin) ;)
 	
 cmod_libs: $(CMOD_OBJS) $(CMOD_OUTLIBS) #algo_libs
-	@echo CMOD MakeFile cmod_libs
+	@echo ----------- CMOD MakeFile cmod_libs
 
 #Remake
 cmod_remake: cmod_cleaner all
-	@echo CMOD MakeFile cmod_remake
+	@echo ----------- CMOD MakeFile cmod_remake
 
 #Clean only Objecst
 cmod_clean: ds_clean algo_clean
-	@echo CMOD MakeFile cmod_clean
+	@echo ----------- CMOD MakeFile cmod_clean
 
 #Full Clean, Objects and Binaries
 cmod_cleaner: 
-	@echo CMOD MakeFile cmod_cleaner
+	@echo ----------- CMOD MakeFile cmod_cleaner
 	@$(RM) -rf $(CMODBUILD_DIR)
 	@$(RM) -rf $(CMODLIB_DIR)
 
