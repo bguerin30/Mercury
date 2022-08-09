@@ -6,34 +6,38 @@ CMOD_DIR	:= c_modules
 
 
 
-.PHONY: all dirs clean remake tests libs
+.PHONY: all dirs clean cleaner remake tests libs
 
-all: cleaner dirs libs
+all: cleaner dirs libs tests
+	@echo MAIN MakeFile all
 
 clean: cmod_clean	#pymod_clean
+	@echo MAIN MakeFile clean
+
 tests: cmod_tests  #pymod_tests
+	@echo MAIN MakeFile tests
+
 libs: cmod_libs	#pymod_libs
 	@echo MAIN MakeFile cleaner
 
-
 dirs: out_dirs cmod_dirs #pymod_dirs
 	@echo MAIN MakeFile dirs
-
-remake: cleaner cmod_all #pymod_all
-
-$(info LIBDIR = $(LIBDIR))
-$(info LIBDIR = $(BUILDDIR))
-
-cleaner:
-	@echo MAIN MakeFile cleaner
-	@$(RM) -rf $(BUILDDIR)
-	@$(RM) -rf $(LIBDIR)
 
 out_dirs: 
 	@echo MAIN MakeFile out_dirs
 	@mkdir -p $(LIBDIR)
 	@mkdir -p $(BUILDDIR)
 
+remake: clean libs tests
+	@echo MAIN MakeFile dirs
+
+$(info LIBDIR = $(LIBDIR))
+$(info LIBDIR = $(BUILDDIR))
+
+cleaner: cmod_cleaner
+	@echo MAIN MakeFile cleaner
+	@$(RM) -rf $(BUILDDIR)
+	@$(RM) -rf $(LIBDIR)
 
 -include $(CMOD_DIR)/cmod_makefile.mk
 -include $(PYMOD_DIR)/pymod_makefile.mk
